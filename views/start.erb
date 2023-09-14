@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RPS Start</title>
+	<link rel="stylesheet" href="start.css">
+</head>
+<body>
+	<h1>Hello <%= @player_name %>. Come challenge!</h1>
+	<p>Round <%= @round %></p>
+	<form action="/result" method="post">
+		<img src="rock.gif" height=160 width=240>
+		<img src="paper.jpg" height=160 width=240>
+		<img src="scissors.jpg" height=160 width=240><br><br>
+	  <input type="radio" name="choice" value="rock"> ROCK
+	  <input type="radio" name="choice" value="paper"> PAPER
+	  <input type="radio" name="choice" value="scissors"> SCISSORS 
+	  <br><br>
+	  <input type="submit">
+	  <input type="hidden" name="name" value=<%= @player_name %>>
+	  <input type="hidden" name="turns" value=<%= @turns-1 %> >
+	  <input type="hidden" name="round" value=<%= @round+1 %>>
+	  <input type="hidden" name="win" value=<%= @win %>>
+	  <input type="hidden" name="draw" value=<%= @draw %>>
+	  <input type="hidden" name="lose" value=<%= @lose %>>
+	</form>
+</body>
+</html>
